@@ -3,9 +3,13 @@ services:
   db:
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
+    ulimits:
+      nproc: 65535
+      nofile:
+          soft: 20000
+          hard: 40000
     env_file: 
-      - ./env/.env
-    restart: always
+      - ./.env
     ports:
       - 3306:3306
     environment:
@@ -20,19 +24,18 @@ services:
         ipv4_address: 173.40.0.7
   web:
     env_file: 
-      - ./env/.env
+      - ./.env
     build:
       context: .
     ports:
       - '8080:8080'
-    restart: always
     links:
       - db
     depends_on:
       - db
     volumes:
       - .:/app
-      - ./env:/env
+      - .:/env
     networks:
       challenge:
         ipv4_address: 173.40.0.8

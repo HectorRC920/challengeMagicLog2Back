@@ -10,10 +10,4 @@ class routerAPI {
     }
 }
 
-// function routerAPI(app){
-//     const router = express.Router();
-//     app.use('/api/v1', router);
-//     router.use('/logon', loginRouter);
-// }
-
 module.exports = routerAPI;
