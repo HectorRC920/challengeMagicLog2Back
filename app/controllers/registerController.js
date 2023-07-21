@@ -1,4 +1,3 @@
-const axios = require('axios');
 const bycrypt = require('bcrypt');
 const UserRepository = require('../repository/User');
 const registerController = async (req, res) => {
