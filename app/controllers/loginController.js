@@ -1,7 +1,5 @@
 const axios = require('axios');
-const { writeFile } = require('fs/promises');
-
-
+const bycrypt = require('bcrypt');
 const loginController = async (req, res) => {
   const {email, password} = req.body
   //login with email and password with sequelize 

@@ -14,9 +14,9 @@ services:
       - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=$MYSQLDB_USER
-      - MYSQL_PASSWORD=$MYSQLDB_USER_PASSWORD
-      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+      - MYSQLDB_USER=$MYSQLDB_USER
+      - MYSQLDB_USER_PASSWORD=$MYSQLDB_USER_PASSWORD
+      - MYSQLDB_DATABASE=$MYSQLDB_DATABASE
     volumes:
       - db_data:/var/lib/mysql
     networks:
@@ -28,7 +28,7 @@ services:
     build:
       context: .
     ports:
-      - '8080:8080'
+      - '$NODE_LOCAL_PORT:$NODE_DOCKER_PORT'
     links:
       - db
     depends_on:
