@@ -17,6 +17,14 @@ module.exports = {
       password: {
         type: Sequelize.STRING,
       },
+      roleId: { 
+        type: Sequelize.BIGINT.UNSIGNED,
+        field: 'role_id',
+        references: {
+          model: 'roles',
+          key: 'id',
+        },
+      },
       createdAt: { 
         type: Sequelize.DATE,
         field: 'created_at'
