@@ -12,9 +12,9 @@ module.exports = {
       },
       name: {
         //create a type of enum with values: admin, user, guest
-        type : Sequelize.ENUM(ROLES.ADMIN, ROLES.CUSTOMER, ROLES.SELLER),
+        type : Sequelize.ENUM(ROLES.admin, ROLES.customer, ROLES.seller),
         unique: true,
-        defaultValue: ROLES.CUSTOMER,
+        defaultValue: ROLES.customer,
       },
       createdAt: {
         allowNull: false,

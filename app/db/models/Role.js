@@ -27,9 +27,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: {
       //create a type of enum with values: admin, user, guest
-      type : DataTypes.ENUM(ROLES.ADMIN, ROLES.CUSTOMER, ROLES.SELLER),
+      type : DataTypes.ENUM(ROLES.admin, ROLES.customer, ROLES.seller),
       unique: true,
-      defaultValue: ROLES.CUSTOMER,
+      defaultValue: ROLES.customer,
     },
   }, {
     sequelize,

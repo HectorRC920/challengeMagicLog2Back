@@ -8,6 +8,15 @@ class UserRepository extends BaseRepository {
   async findByEmail(email) { // this is a custom method
     return await this.model.findOne({ where: { email } });
   }
+  async findByEmailWithRole(email) { 
+    return await this.model.findOne({
+      where: { email },
+      include: {
+        association: 'role',
+        attributes: ['name'],
+      }
+    });
+  }
 }
 
 module.exports = UserRepository;

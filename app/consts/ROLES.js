@@ -1,6 +1,6 @@
 const ROLES = {
-    ADMIN: 'admin',
-    SELLER: 'seller',
-    CUSTOMER: 'customer'
+    admin: 'admin',
+    seller: 'seller',
+    customer: 'customer'
 }
 module.exports = ROLES;
